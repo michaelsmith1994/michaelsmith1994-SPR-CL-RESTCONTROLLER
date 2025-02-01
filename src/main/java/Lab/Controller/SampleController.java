@@ -1,6 +1,9 @@
 package Lab.Controller;
 
 import Lab.Model.Sample;
+
+import java.io.Serializable;
+
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,9 +50,9 @@ public class SampleController {
      * should respond with "1".
      */
     @GetMapping("/long/{id}")
-    public long getPathVariable(){
+    public long getPathVariable(@PathVariable Long id){
         //you will need to change the method's parameters and return the extracted path variable.
-        return 0;
+        return id;
     }
     /**
      * TODO: extract the request body and respond with it.
@@ -74,8 +77,8 @@ public class SampleController {
      * }
      */
     @PostMapping(value = "/requestbody")
-    public Sample postSample(){
+    public Sample postSample(@RequestBody Sample requestbody){
         //you will need to change the method's parameters and return the extracted request body.
-        return null;
+        return requestbody;
     }
 }
